@@ -4,7 +4,7 @@ import { chart } from './chart';
 
 async function getData() {
   try {
-    const response = await axios.get('http://localhost:3000/api/latest');
+    const response = await axios.get('https://server-currency-chart.onrender.com/api/latest');
     const data = response.data.rates;
     let keys = Object.keys(data);
     let values = Object.values(data);
@@ -16,7 +16,7 @@ async function getData() {
 
 async function getCurrencies() {
   try {
-    const response = await axios.get('http://localhost:3000/api/currencies');
+    const response = await axios.get('https://server-currency-chart.onrender.com/api/currencies');
     const data = response.data;
     const entries = Object.entries(data);
     renderCurrencies(entries)
